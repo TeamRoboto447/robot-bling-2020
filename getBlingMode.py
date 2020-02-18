@@ -13,6 +13,7 @@ def initServer():
 	print("Connected")
 	blingTable = NT.getTable("Bling")
 	blingSelect = blingTable.getEntry("blingSelect")
+	return NT
 
 def getBlingSelect:
 	blingSelect.getString("idle")
