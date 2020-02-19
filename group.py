@@ -26,7 +26,7 @@ class LEDSection:
 			self.show(show)
 	def invertedFill(self, color, show = False):
                 for i in self.currentRange:
-                        self.pixels[i-1-self.currentRange] = color
+                        self.pixels[i] = color
                         self.show(show)
 	def grade(self, colorStart, colorEnd, show = False):
 		dX = self.max - self.min

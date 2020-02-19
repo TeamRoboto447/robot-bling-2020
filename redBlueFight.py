@@ -11,19 +11,20 @@ pixels = neopixel.NeoPixel(NEO_PIN, NUM_LED, auto_write = False, brightness = 0.
 pixels.show()
 
 def flow(color):
-	for i in range(NUM_LED):
-		pixels[i] = color
-		if i % speed is 0:
-			pixels.show()
-def reverseFlow(color):
-	for i in range(NUM_LED):
-		pixels[NUM_LED - 1 - i] = color
-		if i % speed is 0:
-			pixels.show()
+        for i in range(NUM_LED):
+                pixels[i] = color
+                if i % speed is 0:
+                        pixels.show()
 
-def main:
+def reverseFlow(color):
+        for i in range(NUM_LED):
+                pixels[NUM_LED - 1 - i] = color
+                if i % speed is 0:
+                        pixels.show()
+
+def main():
         while(True):
-        	flow((255, 0, 0))
+                flow((255, 0, 0))
                 reverseFlow((0, 0, 255))
 
 

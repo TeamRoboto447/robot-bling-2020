@@ -49,14 +49,14 @@ class fight:
         self.pixels.show()
     def run(self):
         if self.iter%2 is 0:
-        self.dic["frameLeft"].fill((0, 0, 255), show = True)
-        self.dic["frameRight"].fill((0, 0, 255), show = True)
-        self.dic["frameFront"].fill((255, 0, 0), show = True)
-        self.dic["frameBack"].fill((255, 0, 0), show = True)
+            self.dic["frameLeft"].fill((0, 0, 255), show = True)
+            self.dic["frameRight"].invertedFill((0, 0, 255), show = True)
+            self.dic["frameFront"].fill((255, 0, 0), show = True)
+            self.dic["frameBack"].invertedFill((255, 0, 0), show = True)
         else:
-        self.dic["frameLeft"].fill((0, 0, 255), show = True)
-        self.dic["frameRight"].fill((0, 0, 255), show = True)
-        self.dic["frameFront"].fill((255, 0, 0), show = True)
-        self.dic["frameBack"].fill((255, 0, 0), show = True)
+            self.dic["frameLeft"].invertedFill((255, 0, 0), show = True)
+            self.dic["frameRight"].fill((255, 0, 0), show = True)
+            self.dic["frameFront"].invertedFill((0, 0, 255), show = True)
+            self.dic["frameBack"].fill((0, 0, 255), show = True)
         self.iter += 1
     end = end
