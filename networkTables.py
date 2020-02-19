@@ -3,11 +3,11 @@ from networktables import NetworkTables as NT
 from time import sleep
 import settings
 
-sett = settings.getSettings("NetworkTable")
+sett = settings.getSettings("NetworkTables")
 
 class tables:
     def __init__(self):
-        NT.initialize(server='roborio-447-frc.local')
+        NT.initialize(server=sett['HostAddress'])
         print("Connecting...")
         while(not NT.isConnected()):
                 sleep(0.1)
@@ -18,5 +18,5 @@ class tables:
         return self.blingSelect.value
     def getTeamColor(self):
         return self.teamColor.value
-    def addBlingSelectListener(self,listener):
-        self.blingSelect.addEntryListener(listener)
+    def EventListener(self,listener):
+        NT.addEntryListener(listener)
