@@ -7,11 +7,14 @@ sett = settings.getSettings("NetworkTables")
 
 class tables:
     def __init__(self):
-        NT.initialize(server=sett['HostAddress'])
-        print("Connecting...")
+        if not sett['Deployed']:
+            NT.initialize(server=sett['HostAddress'])
+        else:
+            NT.initialize(f"roboRIO-{sett['TeamNumber']}-FRC.local")
+        print("NT Connecting...")
         while(not NT.isConnected()):
                 sleep(0.1)
-        print("Connected")
+        print("NT Connected")
         self.blingSelect = NT.getEntry(sett["BlingSelect"])
         self.teamColor = NT.getEntry(sett["TeamColor"])
         self.stationNumb = NT.getEntry(sett["stationNumb"])
