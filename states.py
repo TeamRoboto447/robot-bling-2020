@@ -39,13 +39,13 @@ class fight:
         self.dic = dictOfGroups
         self.tables = tables
         self.pixels = pixels
+        self.iter = 0
     def start(self):
         color = (0, 255, 0)
         self.dic["frame"].fill(color)
         self.dic["turret"].fill(color)
         self.pixels.show()
     def run(self):
-        self.iter = 0
         if self.iter%2 is 0:
             self.dic["frame"].fill((255, 0, 0), show=True)
             self.dic["turret"].fill((255, 0, 0), show=True)
