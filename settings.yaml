@@ -1,4 +1,5 @@
 NetworkTables:
   BlingSelect: /Bling/blingSelect
-  TeamColor: /FMS/Alliance
+  TeamColor: /FMSInfo/IsRedAlliance
+  stationNumb: /FMSInfo/StationNumber
   HostAddress: 192.168.137.1  

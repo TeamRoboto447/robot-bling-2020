@@ -14,12 +14,12 @@ pixels.show()
 tables = networkTables.tables()
 
 frameLeft = LEDSection(pixels,0,10)
-frameRight = LEDSection(pixels,10,20)
-frameFront = LEDSection(pixels,30,40)
-frameBack = LEDSection(pixels,40,50)
+frameRight = LEDSection(pixels,10,20,True)
+frameFront = LEDSection(pixels,20,30)
+frameBack = LEDSection(pixels,30,40, True)
 
-turretRight = LEDSection(pixels,50,55)
-turretLeft = LEDSection(pixels,55,60)
+turretRight = LEDSection(pixels,40,45)
+turretLeft = LEDSection(pixels,45,50,True)
 
 groups = {
     "frameLeft": frameLeft,
@@ -47,7 +47,6 @@ def changeState(key, value, isNew):
         state.start()
 
 tables.EventListener(changeState)
-
 
 try:
     while True:

@@ -10,7 +10,7 @@ class idle:
         self.tables = tables
         self.pixels = pixels
     def start(self):
-        color = {"red":(255,0,0),"blue":(0,0,255)}[self.tables.getTeamColor()]
+        color = {True:(255,0,0),False:(0,0,255)}.get(self.tables.getTeamColor(),(0,255,0))
         self.dic["frame"].fill(color)
         self.dic["turret"].fill(color)
         self.pixels.show()

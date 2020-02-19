@@ -14,9 +14,12 @@ class tables:
         print("Connected")
         self.blingSelect = NT.getEntry(sett["BlingSelect"])
         self.teamColor = NT.getEntry(sett["TeamColor"])
+        self.stationNumb = NT.getEntry(sett["stationNumb"])
     def getBlingSelect(self):
         return self.blingSelect.value
     def getTeamColor(self):
         return self.teamColor.value
+    def getStatonNumb(self):
+        return self.stationNumb.value
     def EventListener(self,listener):
         NT.addEntryListener(listener)
