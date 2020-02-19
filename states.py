@@ -15,7 +15,10 @@ class idle:
         self.dic["turret"].fill(color)
         self.pixels.show()
     def run(self):
-        pass
+        color = {True:(255,0,0),False:(0,0,255)}.get(self.tables.getTeamColor(),(0,255,0))
+	self.dic["frame"].fill(color)
+	self.dic["turret"].fill(color)
+	self.pixels.show()
     end = end
 
 class grade:
@@ -43,11 +46,11 @@ class fight:
         self.pixels.show()
     def run(self):
         self.iter = 0
-        if iter%2 is 0:
+        if self.iter%2 is 0:
             self.dic["frame"].fill((255, 0, 0), show=True)
             self.dic["turret"].fill((255, 0, 0), show=True)
         else:
             self.dic["frame"].fill((0, 0, 255), show=True)
             self.dic["turret"].fill((0, 0, 255), show=True)
-        iter += 1
+        self.iter += 1
     end = end
