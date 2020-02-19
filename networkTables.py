@@ -11,10 +11,10 @@ class tables:
             NT.initialize(server=sett['HostAddress'])
         else:
             NT.initialize(f"roboRIO-{sett['TeamNumber']}-FRC.local")
-        print("Connecting...")
+        print("NT Connecting...")
         while(not NT.isConnected()):
                 sleep(0.1)
-        print("Connected")
+        print("NT Connected")
         self.blingSelect = NT.getEntry(sett["BlingSelect"])
         self.teamColor = NT.getEntry(sett["TeamColor"])
         self.stationNumb = NT.getEntry(sett["stationNumb"])
