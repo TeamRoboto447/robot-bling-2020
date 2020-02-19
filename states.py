@@ -16,9 +16,9 @@ class idle:
         self.pixels.show()
     def run(self):
         color = {True:(255,0,0),False:(0,0,255)}.get(self.tables.getTeamColor(),(0,255,0))
-	self.dic["frame"].fill(color)
-	self.dic["turret"].fill(color)
-	self.pixels.show()
+        self.dic["frame"].fill(color)
+        self.dic["turret"].fill(color)
+        self.pixels.show()
     end = end
 
 class grade:
