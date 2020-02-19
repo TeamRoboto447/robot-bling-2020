@@ -42,15 +42,21 @@ class fight:
         self.iter = 0
     def start(self):
         color = (0, 255, 0)
-        self.dic["frame"].fill(color)
-        self.dic["turret"].fill(color)
+        self.dic["frameLeft"].fill(color)
+        self.dic["frameRight"].fill(color)
+        self.dic["frameFront"].fill(color)
+        self.dic["frameBack"].fill(color)
         self.pixels.show()
     def run(self):
         if self.iter%2 is 0:
-            self.dic["frame"].fill((255, 0, 0), show=True)
-            self.dic["turret"].fill((255, 0, 0), show=True)
+        self.dic["frameLeft"].fill((0, 0, 255), show = True)
+        self.dic["frameRight"].fill((0, 0, 255), show = True)
+        self.dic["frameFront"].fill((255, 0, 0), show = True)
+        self.dic["frameBack"].fill((255, 0, 0), show = True)
         else:
-            self.dic["frame"].fill((0, 0, 255), show=True)
-            self.dic["turret"].fill((0, 0, 255), show=True)
+        self.dic["frameLeft"].fill((0, 0, 255), show = True)
+        self.dic["frameRight"].fill((0, 0, 255), show = True)
+        self.dic["frameFront"].fill((255, 0, 0), show = True)
+        self.dic["frameBack"].fill((255, 0, 0), show = True)
         self.iter += 1
     end = end

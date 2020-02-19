@@ -16,21 +16,21 @@ stationNumb.setNumber(1)
 def changeMode():
     print("Changing Mode")
     mode = input("Select A Mode> ")
-    print(f"Selected mode: '{mode}'")
+    print(f"Selected Bling Mode: '{mode}'")
     blingSelect.setString(mode)
 
 def changeColor():
-    print("Changing Color")
+    print("Changing Team Color")
     validColor = False
     while not validColor:
-        color = input("Select A Color:\nR = Red\nB = Blue\nC = Cancel\n> ")
+        color = input("Select A Team Color:\nR = Red\nB = Blue\nC = Cancel\n> ")
         if color == "R":
             validColor = True
-            print("Selected Color: Red")
+            print("Selected Team Color: Red")
             teamColor.setBoolean(True)
         elif color == "B":
             validColor = True
-            print("Selected Color: Blue")
+            print("Selected Team Color: Blue")
             teamColor.setBoolean(False)
         elif color == "C":
             validColor = True
@@ -46,15 +46,15 @@ def changeStation():
         if station == "1":
             validStation = True
             print("Selected Station: 1")
-            teamNumber.setNumber(1)
+            stationNumb.setNumber(1)
         elif station == "2":
             validStation = True
             print("Selected Station: 2")
-            teamNumber.setNumber(2)
+            stationNumb.setNumber(2)
         elif station == "3":
             validStation = True
             print("Selected Station: 3")
-            teamNumber.setNumber(3)
+            stationNumb.setNumber(3)
         elif station == "Cancel":
             validStation = True
             print("Station Not Changed")
@@ -63,7 +63,7 @@ def changeStation():
             print("Not A Valid Station")
 
 while True:
-    selectChange = input("M = Mode\nC = Color\nS = Station Number\n> ")
+    selectChange = input("M = Bling Mode\nC = Team Color\nS = Station Number\n> ")
     if selectChange == "M":
         changeMode()
     elif selectChange == "C":

@@ -24,6 +24,10 @@ class LEDSection:
 		for i in self.currentRange:
 			self.pixels[i] = color
 			self.show(show)
+	def invertedFill(self, color, show = False):
+                for i in self.currentRange:
+                        self.pixels[i-1-self.currentRange] = color
+                        self.show(show)
 	def grade(self, colorStart, colorEnd, show = False):
 		dX = self.max - self.min
 		rM = (colorEnd[0] - colorStart[0]) / dX
@@ -44,6 +48,9 @@ class SectionGroup:
 	def fill(self, color, show = False):
 		for item in self.items:
 			item.fill(color, show)
+	def invertedFill(self, color, show = False):
+                for item in self.items:
+                        item.invertedFill(color, show)
 	def grade(self, colorStart, colorEnd, show = False):
 		for item in self.items:
-			item.grade(colorStart,colorEnd,show)
+			item.grade(colorStart, colorEnd, show)
