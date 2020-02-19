@@ -34,7 +34,8 @@ groups = {
 
 statesDict = {
     "idle": states.idle(groups, tables, pixels),
-    "grade": states.grade(groups, tables, pixels)
+    "grade": states.grade(groups, tables, pixels),
+    "fight": states.fight(groups, tables, pixels)
 }
 
 state = statesDict["idle"]

@@ -31,3 +31,23 @@ class grade:
         pass
     end = end
 
+class fight:
+    def __init__(self,dictOfGroups,tables,pixels):
+        self.dic = dictOfGroups
+        self.tables = tables
+        self.pixels = pixels
+    def start(self):
+        color = (0, 255, 0)
+        self.dic["frame"].fill(color)
+        self.dic["turret"].fill(color)
+        self.pixels.show()
+    def run(self):
+        self.iter = 0
+        if iter%2 is 0:
+            self.dic["frame"].fill((255, 0, 0), show=True)
+            self.dic["turret"].fill((255, 0, 0), show=True)
+        else:
+            self.dic["frame"].fill((0, 0, 255), show=True)
+            self.dic["turret"].fill((0, 0, 255), show=True)
+        iter += 1
+    end = end

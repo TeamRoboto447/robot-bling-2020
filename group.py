@@ -36,6 +36,7 @@ class LEDSection:
 			self.pixels[i] = (grade(self,i,rM,rB),grade(self,i,gM,gB),grade(self,i,bM,bB))
 		print('')
 		self.show(show)
+                
 
 class SectionGroup:
 	def __init__(self, *items):

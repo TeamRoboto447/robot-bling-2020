@@ -3,3 +3,5 @@ NetworkTables:
   TeamColor: /FMSInfo/IsRedAlliance
   stationNumb: /FMSInfo/StationNumber
   HostAddress: 192.168.137.1  
+  TeamNumber: 447
+  Deployed: False
