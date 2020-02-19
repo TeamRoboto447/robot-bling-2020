@@ -16,9 +16,8 @@ class idle:
         self.pixels.show()
     def run(self):
         color = {True:(255,0,0),False:(0,0,255)}.get(self.tables.getTeamColor(),(0,255,0))
-        self.dic["frame"].fill(color)
-        self.dic["turret"].fill(color)
-        self.pixels.show()
+        self.dic["frame"].fill(color, show = True)
+        self.dic["turret"].fill(color, show = True)
     end = end
 
 class grade:
@@ -46,6 +45,7 @@ class fight:
         self.dic["frameRight"].fill(color)
         self.dic["frameFront"].fill(color)
         self.dic["frameBack"].fill(color)
+        self.dic["turret"].fill(0)
         self.pixels.show()
     def run(self):
         if self.iter%2 is 0:
@@ -59,4 +59,19 @@ class fight:
             self.dic["frameFront"].invertedFill((0, 0, 255), show = True)
             self.dic["frameBack"].fill((0, 0, 255), show = True)
         self.iter += 1
+    end = end
+class init:
+    def __init__(self, dictOfGroups, tables, pixels):
+        self.dic = dictOfGroups
+        self.tables = tables
+        self.pixels = pixels
+    def start(self):
+        self.dic["frame"].fill((0, 55, 0), show = True)
+        self.dic["turret"].fill((0, 55, 0), show = True)
+        self.dic["frame"].fill((155, 0, 155), show = True)
+        self.dic["turret"].fill((155, 0, 155), show = True)
+        self.dic["frame"].fill((255, 255, 255), show = True)
+        self.dic["turret"].fill((255, 255, 255), show = True)
+    def run(self):
+        pass
     end = end

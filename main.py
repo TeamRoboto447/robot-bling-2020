@@ -33,12 +33,13 @@ groups = {
 }
 
 statesDict = {
+    "init": states.init(groups, tables, pixels),
     "idle": states.idle(groups, tables, pixels),
     "grade": states.grade(groups, tables, pixels),
     "fight": states.fight(groups, tables, pixels)
 }
 
-state = statesDict["idle"]
+state = statesDict["init"]
 state.start()
 def changeState(key, value, isNew):
     global state, statesDict
