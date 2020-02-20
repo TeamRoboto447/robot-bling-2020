@@ -26,7 +26,7 @@ class LEDSection:
 		for i in self.currentRange:
 			self.pixels[i] = color
 		self.show(show)
-	def fillOverTime(self, color, numberPerLoop):
+	def fillOverTime(self, color, numberPerLoop = 1):
 		if not self.cont:
 			return True
 		for i in range(0,numberPerLoop):
@@ -38,7 +38,7 @@ class LEDSection:
 			self.cont = False
 			return True
 		return False
-	def invertedFillOverTime(self, color):
+	def invertedFillOverTime(self, color, numberPerLoop = 1):
 		if not self.cont:
 			return True
 		for i in range(0,numberPerLoop):
