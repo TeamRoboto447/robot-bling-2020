@@ -97,13 +97,13 @@ class init:
             self.dic["frame"].fillOverTime((0, 10, 0), numberPerLoop = 1),
             self.dic["turret"].fillOverTime((0, 10, 0), numberPerLoop = 1)
             ]
-            $print("stage0")
+            #print("stage0")
         elif self.stage is 1:
             bools = [
             self.dic["frame"].fillOverTime((55, 0, 55), numberPerLoop = 1),
             self.dic["turret"].fillOverTime((55, 0, 55), numberPerLoop = 1)
             ]
-            $print("stage1")
+            #print("stage1")
         elif self.stage is 2:
             bools = [
             self.dic["frame"].fillOverTime((255, 255, 255), numberPerLoop = 1),
