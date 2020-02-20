@@ -61,6 +61,7 @@ try:
     while True:
         t = threading.Thread(target=state.run)
         t.start()
+        t.join()
         time.sleep(0.001)
 finally:
     state.end()
