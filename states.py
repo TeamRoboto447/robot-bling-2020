@@ -72,6 +72,11 @@ class fight:
                 changeMode = False
         if changeMode:
             self.state = not self.state
+            self.dic["frameLeft"].reset()
+            self.dic["frameRight"].reset()
+            self.dic["frameFront"].reset()
+            self.dic["frameBack"].reset()
+
         
     def teamChange(self, team):
         pass
