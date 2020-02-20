@@ -94,7 +94,7 @@ class SectionGroup:
         if self.finished:
             return True
         finished = reverse(self.items)[self.index].fillOverTime(color,numberPerLoop)
-        print(self.index,self.finished,len(self))
+        print(self.index,finished,len(self))
         if finished:
             self.index += 1
             if self.index >= len(self):
