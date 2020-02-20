@@ -48,7 +48,7 @@ t = None
 
 def changeState(key, value, isNew):
     global state, statesDict, t
-    if t != None:
+    if t != None and t.is_alive():
         t.join()
     if key == sett["NetworkTables"]["BlingSelect"]:
         state.end()
