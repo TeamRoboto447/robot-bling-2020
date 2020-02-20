@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import board, neopixel, time
 from group import LEDSection, SectionGroup
-import networkTables, states, settings
+import networkTables, states, settings, copy, threading
 
 sett = settings.getSettings()
 
@@ -43,8 +43,12 @@ state = statesDict["init"]
 for i in range(100000):
     state.run()
 
+t = None
+
 def changeState(key, value, isNew):
-    global state, statesDict
+    global state, statesDict, t
+    if t != None:
+        t.join()
     if key == sett["NetworkTables"]["BlingSelect"]:
         state.end()
         state = statesDict[value]
@@ -56,7 +60,8 @@ tables.EventListener(changeState)
 
 try:
     while True:
-        state.run()
+        t = Threading.Thread(target=state.run)
+        t.start()
         time.sleep(0.001)
 finally:
     state.end()
