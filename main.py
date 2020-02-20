@@ -59,7 +59,7 @@ tables.EventListener(changeState)
 
 try:
     while True:
-        t = Threading.Thread(target=state.run)
+        t = threading.Thread(target=state.run)
         t.start()
         time.sleep(0.001)
 finally:
