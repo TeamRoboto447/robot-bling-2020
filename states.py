@@ -57,12 +57,8 @@ class fight:
             done = self.dic["frame"].fillOverTimeAsOne((0, 0, 255), numberPerLoop = 2)
         else:
             done = self.dic["frame"].invertedFillOverTimeAsOne((255, 0, 0), numberPerLoop = 2)
-        changeMode = True
         
-        if not done:
-            changeMode = False
-        
-        if changeMode:
+        if done:
             self.state = not self.state
             self.dic["frame"].reset()
 
