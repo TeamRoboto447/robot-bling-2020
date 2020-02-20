@@ -112,7 +112,7 @@ class SectionGroup:
         for item in self.items:
             item.grade(colorStart, colorEnd, show)
     def __len__(self):
-        return len(items)
+        return len(self.items)
     def reset(self):
         self.index = 0
         self.finished = False
