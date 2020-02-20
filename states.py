@@ -18,8 +18,8 @@ class idle:
         pass
     def teamChange(self, team):
         color = {True:(255,0,0),False:(0,0,255)}.get(team,(0,255,0))
-        self.dic["frame"].fill(color, show = True)
-        self.dic["turret"].fill(color, show = True)
+        self.dic["frame"].fillOverTime(color)
+        self.dic["turret"].fillOverTime(color)
     end = end
 
 class grade:
