@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 import board, neopixel, time
+import networkTables, states, settings, threading
 from group import LEDSection, SectionGroup
-import networkTables, states, settings, copy, threading
+from copy import deepcopy
 
 sett = settings.getSettings()
 
