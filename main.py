@@ -48,7 +48,7 @@ def changeState(key, value, isNew):
         state = statesDict[value]
         state.start()
     elif key == sett["NetworkTables"]["TeamColor"]:
-        state.changeTeam(value)
+        state.teamChange(value)
 
 tables.EventListener(changeState)
 

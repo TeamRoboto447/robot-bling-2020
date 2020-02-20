@@ -54,17 +54,17 @@ class fight:
     def run(self):
         if self.state:
             bools = [
-            self.dic["frameLeft"].fillOverTime((0, 0, 255)),
-            self.dic["frameRight"].invertedFillOverTime((0, 0, 255)),
-            self.dic["frameFront"].fillOverTime((255, 0, 0)),
-            self.dic["frameBack"].invertedFillOverTime((255, 0, 0))
+            self.dic["frameLeft"].fillOverTime((0, 0, 255), numberPerLoop = 1),
+            self.dic["frameRight"].invertedFillOverTime((0, 0, 255), numberPerLoop = 1),
+            self.dic["frameFront"].fillOverTime((255, 0, 0), numberPerLoop = 1),
+            self.dic["frameBack"].invertedFillOverTime((255, 0, 0), numberPerLoop = 1)
             ]
         else:
             bools = [
-            self.dic["frameLeft"].invertedFillOverTime((255, 0, 0)),
-            self.dic["frameRight"].fillOverTime((255, 0, 0)),
-            self.dic["frameFront"].invertedFillOverTime((0, 0, 255)),
-            self.dic["frameBack"].fillOverTime((0, 0, 255))
+            self.dic["frameLeft"].invertedFillOverTime((255, 0, 0), numberPerLoop = 1),
+            self.dic["frameRight"].fillOverTime((255, 0, 0), numberPerLoop = 1),
+            self.dic["frameFront"].invertedFillOverTime((0, 0, 255), numberPerLoop = 1),
+            self.dic["frameBack"].fillOverTime((0, 0, 255), numberPerLoop = 1)
             ]
         changeMode = True
         for bool in bools:
