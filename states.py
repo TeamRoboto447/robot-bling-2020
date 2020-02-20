@@ -54,29 +54,17 @@ class fight:
         self.pixels.show()
     def run(self):
         if self.state:
-            bools = [
-            self.dic["frame"].fillOverTimeAsOne((0, 0, 255), numberPerLoop = 2)#,
-            #self.dic["frameRight"].invertedFillOverTimeAsOne((0, 0, 255), numberPerLoop = 2),
-            #self.dic["frameFront"].fillOverTimeAsOne((255, 0, 0), numberPerLoop = 2),
-            #self.dic["frameBack"].invertedFillOverTimeAsOne((255, 0, 0), numberPerLoop = 2)
-            ]
+            done = self.dic["frame"].fillOverTimeAsOne((0, 0, 255), numberPerLoop = 2)
         else:
-            bools = [
-            self.dic["frame"].invertedFillOverTimeAsOne((255, 0, 0), numberPerLoop = 2)#,
-            #self.dic["frameRight"].fillOverTimeAsOne((255, 0, 0), numberPerLoop = 2),
-            #self.dic["frameFront"].invertedFillOverTimeAsOne((0, 0, 255), numberPerLoop = 2),
-            #self.dic["frameBack"].fillOverTimeAsOne((0, 0, 255), numberPerLoop = 2)
-            ]
+            done = self.dic["frame"].invertedFillOverTimeAsOne((255, 0, 0), numberPerLoop = 2)
         changeMode = True
-        for bool in bools:
-            if not bool:
-                changeMode = False
+        
+        if not done:
+            changeMode = False
+        
         if changeMode:
             self.state = not self.state
-            self.dic["frameLeft"].reset()
-            self.dic["frameRight"].reset()
-            self.dic["frameFront"].reset()
-            self.dic["frameBack"].reset()
+            self.dic["frame"].reset()
 
         
     def teamChange(self, team):
