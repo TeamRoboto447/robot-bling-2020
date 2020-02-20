@@ -88,11 +88,13 @@ class SectionGroup:
         if finished:
             self.index += 1
             self.items[self.index].reset()
+            print(len(self))
             if self.index >= len(self):
                 self.finished = True
                 return True
         return False
     def invertedFillOverTimeAsOne(self,color,numberPerLoop = 1):
+        print(self.finished)
         if self.finished:
             return True
         finished = reverse(self.items)[self.index].fillOverTime(color,numberPerLoop)
