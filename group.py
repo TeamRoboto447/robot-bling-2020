@@ -81,6 +81,7 @@ class SectionGroup:
         for item in self.items:
             item.fill(color, show)
     def fillOverTimeAsOne(self,color,numberPerLoop = 1):
+        print(self.finished)
         if self.finished:
             return True
         finished = self.items[self.index].fillOverTime(color,numberPerLoop)
@@ -95,7 +96,6 @@ class SectionGroup:
         if self.finished:
             return True
         finished = reverse(self.items)[self.index].fillOverTime(color,numberPerLoop)
-        print(self.index,finished,len(self))
         if finished:
             reverse(self.items)[self.index].reset()
             self.index += 1
