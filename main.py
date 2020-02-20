@@ -41,9 +41,7 @@ statesDict = {
 }
 
 state = statesDict["init"]
-for i in range(100000):
-    state.run()
-
+state.run()
 t = None
 
 def changeState(key, value, isNew):
