@@ -42,7 +42,7 @@ class LEDSection:
 		if not self.cont:
 			return True
 		for i in range(0,numberPerLoop):
-			self.pixels[reversed(self.currentRange)[self.index+i]] = color
+			self.pixels[list(reversed(self.currentRange))[self.index+i]] = color
 		self.index += numberPerLoop
 		self.pixels.show()
 		if self.index >= len(self.currentRange):
