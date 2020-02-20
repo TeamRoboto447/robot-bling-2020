@@ -19,7 +19,7 @@ class LEDSection:
         self.cont = True
     def setInverted(self, inverted):
         if inverted:
-            self.currentRange = reverse(self.range))
+            self.currentRange = reverse(self.range)
         else:
             self.currentRange = self.range
         self.inverted = inverted
@@ -46,7 +46,7 @@ class LEDSection:
         if not self.cont:
             return True
         for i in range(0,numberPerLoop):
-            self.pixels[reverse(self.currentRange))[self.index+i]] = color
+            self.pixels[reverse(self.currentRange)[self.index+i]] = color
         self.index += numberPerLoop
         self.pixels.show()
         if self.index + numberPerLoop - 1 >= len(self.currentRange):
