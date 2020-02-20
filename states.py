@@ -114,12 +114,12 @@ class init:
         for bool in bools:
             if not bool:
                 changeMode = False
-                self.dic["frameLeft"].reset()
-                self.dic["frameRight"].reset()
-                self.dic["frameFront"].reset()
-                self.dic["frameBack"].reset()
         if changeMode:
             self.stage += 1
+            self.dic["frameLeft"].reset()
+            self.dic["frameRight"].reset()
+            self.dic["frameFront"].reset()
+            self.dic["frameBack"].reset()
         #self.dic["frame"].fill((0, 10, 0), show = True)
         #self.dic["turret"].fill((0, 10, 0), show = True)
 
