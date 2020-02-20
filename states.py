@@ -92,19 +92,19 @@ class init:
     def start(self):
         pass
     def run(self):
-        if self.stage is 0:
+        if self.stage == 0:
             bools = [
             self.dic["frame"].fillOverTime((0, 10, 0), numberPerLoop = 1),
             self.dic["turret"].fillOverTime((0, 10, 0), numberPerLoop = 1)
             ]
             #print("stage0")
-        elif self.stage is 1:
+        elif self.stage == 1:
             bools = [
             self.dic["frame"].fillOverTime((55, 0, 55), numberPerLoop = 1),
             self.dic["turret"].fillOverTime((55, 0, 55), numberPerLoop = 1)
             ]
             #print("stage1")
-        elif self.stage is 2:
+        elif self.stage == 2:
             bools = [
             self.dic["frame"].fillOverTime((255, 255, 255), numberPerLoop = 1),
             self.dic["turret"].fillOverTime((255, 255, 255), numberPerLoop = 1)
@@ -114,6 +114,10 @@ class init:
         for bool in bools:
             if not bool:
                 changeMode = False
+                self.dic["frameLeft"].reset()
+                self.dic["frameRight"].reset()
+                self.dic["frameFront"].reset()
+                self.dic["frameBack"].reset()
         if changeMode:
             self.stage += 1
         #self.dic["frame"].fill((0, 10, 0), show = True)
