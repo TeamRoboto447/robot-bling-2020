@@ -55,6 +55,6 @@ tables.EventListener(changeState)
 try:
     while True:
         state.run()
-        time.sleep(0.2)
+        time.sleep(0.05)
 finally:
     state.end()
