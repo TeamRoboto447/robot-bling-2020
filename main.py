@@ -41,6 +41,8 @@ statesDict = {
 
 state = statesDict["init"]
 state.start()
+time.sleep(1)
+
 def changeState(key, value, isNew):
     global state, statesDict
     if key == sett["NetworkTables"]["BlingSelect"]:

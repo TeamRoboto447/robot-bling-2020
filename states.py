@@ -18,8 +18,9 @@ class idle:
         pass
     def teamChange(self, team):
         color = {True:(255,0,0),False:(0,0,255)}.get(team,(0,255,0))
-        self.dic["frame"].fillOverTime(color)
-        self.dic["turret"].fillOverTime(color)
+        self.dic["frame"].fill(color)
+        self.dic["turret"].fill(color)
+        self.pixels.show()
     end = end
 
 class grade:
@@ -88,12 +89,12 @@ class init:
         self.tables = tables
         self.pixels = pixels
     def start(self):
-        self.dic["frame"].fillOverTime((0, 10, 0), numberPerLoop = 1)
-        self.dic["turret"].fillOverTime((0, 10, 0), numberPerLoop = 1)
-        self.dic["frame"].fillOverTime((55, 0, 55))
-        self.dic["turret"].fillOverTime((55, 0, 55), numberPerLoop = 1)
-        self.dic["frame"].fillOverTime((255, 255, 255), numberPerLoop = 1)
-        self.dic["turret"].fillOverTime((255, 255, 255), numberPerLoop = 1)
+        self.dic["frame"].fill((0, 10, 0), show = True)
+        self.dic["turret"].fill((0, 10, 0), show = True)
+        self.dic["frame"].fill((55, 0, 55), show = True)
+        self.dic["turret"].fill((55, 0, 55), show = True)
+        self.dic["frame"].fill((255, 255, 255), show = True)
+        self.dic["turret"].fill((255, 255, 255), show = True)
     def run(self):
         pass
     end = end

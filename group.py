@@ -1,3 +1,4 @@
+from time import sleep
 def grade(self,i,m,b):
 	if self.inverted:
 		return round(m * (self.max - i) + b)
