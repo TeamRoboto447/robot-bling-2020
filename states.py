@@ -55,17 +55,17 @@ class fight:
     def run(self):
         if self.state:
             bools = [
-            self.dic["frameLeft"].fillOverTime((0, 0, 255), numberPerLoop = 1),
-            self.dic["frameRight"].invertedFillOverTime((0, 0, 255), numberPerLoop = 1),
-            self.dic["frameFront"].fillOverTime((255, 0, 0), numberPerLoop = 1),
-            self.dic["frameBack"].invertedFillOverTime((255, 0, 0), numberPerLoop = 1)
+            self.dic["frameLeft"].fillOverTime((0, 0, 255), numberPerLoop = 2),
+            self.dic["frameRight"].invertedFillOverTime((0, 0, 255), numberPerLoop = 2),
+            self.dic["frameFront"].fillOverTime((255, 0, 0), numberPerLoop = 2),
+            self.dic["frameBack"].invertedFillOverTime((255, 0, 0), numberPerLoop = 2)
             ]
         else:
             bools = [
-            self.dic["frameLeft"].invertedFillOverTime((255, 0, 0), numberPerLoop = 1),
-            self.dic["frameRight"].fillOverTime((255, 0, 0), numberPerLoop = 1),
-            self.dic["frameFront"].invertedFillOverTime((0, 0, 255), numberPerLoop = 1),
-            self.dic["frameBack"].fillOverTime((0, 0, 255), numberPerLoop = 1)
+            self.dic["frameLeft"].invertedFillOverTime((255, 0, 0), numberPerLoop = 2),
+            self.dic["frameRight"].fillOverTime((255, 0, 0), numberPerLoop = 2),
+            self.dic["frameFront"].invertedFillOverTime((0, 0, 255), numberPerLoop = 2),
+            self.dic["frameBack"].fillOverTime((0, 0, 255), numberPerLoop = 2)
             ]
         changeMode = True
         for bool in bools:
@@ -89,12 +89,14 @@ class init:
         self.tables = tables
         self.pixels = pixels
     def start(self):
-        self.dic["frame"].fillOverTime((0, 10, 0))
-        self.dic["turret"].fillOverTime((0, 10, 0))
-        self.dic["frame"].fillOverTime((55, 0, 55))
-        self.dic["turret"].fillOverTime((55, 0, 55))
-        self.dic["frame"].fillOverTime((255, 255, 255))
-        self.dic["turret"].fillOverTime((255, 255, 255))
+        #self.dic["frame"].fillOverTime((0, 10, 0))
+        #self.dic["turret"].fillOverTime((0, 10, 0))
+        #self.dic["frame"].fillOverTime((55, 0, 55))
+        #self.dic["turret"].fillOverTime((55, 0, 55))
+        #self.dic["frame"].fillOverTime((255, 255, 255))
+        #self.dic["turret"].fillOverTime((255, 255, 255))
+        self.dic["frame"].fill((0, 10, 0), show = True)
+        self.dic["turret"].fill((0, 10, 0), show = True)
     def run(self):
         pass
     end = end
