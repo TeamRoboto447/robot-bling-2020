@@ -88,15 +88,32 @@ class init:
         self.dic = dictOfGroups
         self.tables = tables
         self.pixels = pixels
+        self.stage = 0
     def start(self):
-        #self.dic["frame"].fillOverTime((0, 10, 0))
-        #self.dic["turret"].fillOverTime((0, 10, 0))
-        #self.dic["frame"].fillOverTime((55, 0, 55))
-        #self.dic["turret"].fillOverTime((55, 0, 55))
-        #self.dic["frame"].fillOverTime((255, 255, 255))
-        #self.dic["turret"].fillOverTime((255, 255, 255))
-        self.dic["frame"].fill((0, 10, 0), show = True)
-        self.dic["turret"].fill((0, 10, 0), show = True)
-    def run(self):
         pass
+    def run(self):
+        if self.stage is 0:
+            bools = [
+            self.dic["frame"].fillOverTime((0, 10, 0))
+            self.dic["turret"].fillOverTime((0, 10, 0))
+            ]
+        elif self.stage is 1:
+            bools = [
+            self.dic["frame"].fillOverTime((55, 0, 55))
+            self.dic["turret"].fillOverTime((55, 0, 55))
+            ]
+        elif self.stage is 2:
+            bools = [
+            self.dic["frame"].fillOverTime((255, 255, 255))
+            self.dic["turret"].fillOverTime((255, 255, 255))
+            ]
+        changeMode = True
+        for bool in bools:
+            if not bool:
+                changeMode = False
+        if changeMode:
+            self.stage += 1
+        #self.dic["frame"].fill((0, 10, 0), show = True)
+        #self.dic["turret"].fill((0, 10, 0), show = True)
+
     end = end

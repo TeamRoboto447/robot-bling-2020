@@ -40,8 +40,8 @@ statesDict = {
 }
 
 state = statesDict["init"]
-state.start()
-time.sleep(1)
+for i in range(100000):
+    state.run()
 
 def changeState(key, value, isNew):
     global state, statesDict
