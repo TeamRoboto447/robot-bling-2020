@@ -69,6 +69,8 @@ class LEDSection:
     def reset(self):
         self.index = 0
         self.cont = True
+    def __len__(self):
+        return len(self.currentRange)
 
 class SectionGroup:
     def __init__(self, *items):
@@ -92,6 +94,7 @@ class SectionGroup:
         if self.finished:
             return True
         finished = reverse(self.items)[self.index].fillOverTime(color,numberPerLoop)
+        print(self.index,self.finished,len(self))
         if finished:
             self.index += 1
             if self.index >= len(self):
