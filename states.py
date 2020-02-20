@@ -55,17 +55,17 @@ class fight:
     def run(self):
         if self.state:
             bools = [
-            self.dic["frameLeft"].fillOverTime((0, 0, 255), numberPerLoop = 2),
-            self.dic["frameRight"].invertedFillOverTime((0, 0, 255), numberPerLoop = 2),
-            self.dic["frameFront"].fillOverTime((255, 0, 0), numberPerLoop = 2),
-            self.dic["frameBack"].invertedFillOverTime((255, 0, 0), numberPerLoop = 2)
+            self.dic["frame"].fillOverTimeAsOne((0, 0, 255), numberPerLoop = 2)#,
+            #self.dic["frameRight"].invertedFillOverTimeAsOne((0, 0, 255), numberPerLoop = 2),
+            #self.dic["frameFront"].fillOverTimeAsOne((255, 0, 0), numberPerLoop = 2),
+            #self.dic["frameBack"].invertedFillOverTimeAsOne((255, 0, 0), numberPerLoop = 2)
             ]
         else:
             bools = [
-            self.dic["frameLeft"].invertedFillOverTime((255, 0, 0), numberPerLoop = 2),
-            self.dic["frameRight"].fillOverTime((255, 0, 0), numberPerLoop = 2),
-            self.dic["frameFront"].invertedFillOverTime((0, 0, 255), numberPerLoop = 2),
-            self.dic["frameBack"].fillOverTime((0, 0, 255), numberPerLoop = 2)
+            self.dic["frame"].invertedFillOverTimeAsOne((255, 0, 0), numberPerLoop = 2)#,
+            #self.dic["frameRight"].fillOverTimeAsOne((255, 0, 0), numberPerLoop = 2),
+            #self.dic["frameFront"].invertedFillOverTimeAsOne((0, 0, 255), numberPerLoop = 2),
+            #self.dic["frameBack"].fillOverTimeAsOne((0, 0, 255), numberPerLoop = 2)
             ]
         changeMode = True
         for bool in bools:
@@ -94,20 +94,20 @@ class init:
     def run(self):
         if self.stage == 0:
             bools = [
-            self.dic["frame"].fillOverTime((0, 10, 0), numberPerLoop = 1),
-            self.dic["turret"].fillOverTime((0, 10, 0), numberPerLoop = 1)
+            self.dic["frame"].fillOverTimeAsOne((0, 10, 0), numberPerLoop = 1),
+            self.dic["turret"].fillOverTimeAsOne((0, 10, 0), numberPerLoop = 1)
             ]
             #print("stage0")
         elif self.stage == 1:
             bools = [
-            self.dic["frame"].fillOverTime((55, 0, 55), numberPerLoop = 1),
-            self.dic["turret"].fillOverTime((55, 0, 55), numberPerLoop = 1)
+            self.dic["frame"].fillOverTimeAsOne((55, 0, 55), numberPerLoop = 1),
+            self.dic["turret"].fillOverTimeAsOne((55, 0, 55), numberPerLoop = 1)
             ]
             #print("stage1")
         elif self.stage == 2:
             bools = [
-            self.dic["frame"].fillOverTime((255, 255, 255), numberPerLoop = 1),
-            self.dic["turret"].fillOverTime((255, 255, 255), numberPerLoop = 1)
+            self.dic["frame"].fillOverTimeAsOne((255, 255, 255), numberPerLoop = 1),
+            self.dic["turret"].fillOverTimeAsOne((255, 255, 255), numberPerLoop = 1)
             ]
             #print("stage2")
         changeMode = True
