@@ -89,12 +89,12 @@ class init:
         self.tables = tables
         self.pixels = pixels
     def start(self):
-        self.dic["frame"].fill((0, 10, 0), show = True)
-        self.dic["turret"].fill((0, 10, 0), show = True)
-        self.dic["frame"].fill((55, 0, 55), show = True)
-        self.dic["turret"].fill((55, 0, 55), show = True)
-        self.dic["frame"].fill((255, 255, 255), show = True)
-        self.dic["turret"].fill((255, 255, 255), show = True)
+        self.dic["frame"].fillOverTime((0, 10, 0))
+        self.dic["turret"].fillOverTime((0, 10, 0))
+        self.dic["frame"].fillOverTime((55, 0, 55))
+        self.dic["turret"].fillOverTime((55, 0, 55))
+        self.dic["frame"].fillOverTime((255, 255, 255))
+        self.dic["turret"].fillOverTime((255, 255, 255))
     def run(self):
         pass
     end = end
