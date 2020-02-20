@@ -72,9 +72,12 @@ class SectionGroup:
 	def fill(self, color, show = False):
 		for item in self.items:
 			item.fill(color, show)
-	def invertedFill(self, color, show = False):
+	def fillOverTime(self, color, numberPerLoop = 1):
 		for item in self.items:
-			item.invertedFill(color, show)
+			item.fillOverTime(color, numberPerLoop)
+	def invertedFillOverTime(self, color, numberPerLoop = 1):
+		for item in self.items:
+			item.invertedFillOverTime(color, numberPerLoop)
 	def grade(self, colorStart, colorEnd, show = False):
 		for item in self.items:
 			item.grade(colorStart, colorEnd, show)
