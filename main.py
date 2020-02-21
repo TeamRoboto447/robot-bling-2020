@@ -14,13 +14,13 @@ pixels.show()
 
 tables = networkTables.tables()
 
-frameLeft = LEDSection(pixels,0,10)
-frameRight = LEDSection(pixels,10,20)
-frameFront = LEDSection(pixels,20,30)
-frameBack = LEDSection(pixels,30,40)
+frameLeft = LEDSection(pixels,0,46)
+frameRight = LEDSection(pixels,46,92)
+frameFront = LEDSection(pixels,92,134)
+frameBack = LEDSection(pixels,134,176)
 
-turretRight = LEDSection(pixels,40,45)
-turretLeft = LEDSection(pixels,45,50)
+turretRight = LEDSection(pixels,176,194)
+turretLeft = LEDSection(pixels,194,212)
 
 groups = {
     "frameLeft": frameLeft,
