@@ -54,8 +54,10 @@ class fight:
         self.pixels.show()
     def run(self):
         if self.state:
+            print("normal")
             done = self.dic["frame"].fillOverTimeAsOne((0, 0, 255), numberPerLoop = 2)
         else:
+            print("inverted")
             done = self.dic["frame"].invertedFillOverTimeAsOne((255, 0, 0), numberPerLoop = 2)
         
         if done:
