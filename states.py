@@ -94,6 +94,8 @@ class init:
             self.dic["frame"].fillOverTimeAsOne((255, 255, 255), numberPerLoop = 1),
             self.dic["turret"].fillOverTimeAsOne((255, 255, 255), numberPerLoop = 1)
             ]
+        else:
+            bools = [True]
             #print("stage2")
         changeMode = True
         for bool in bools:
@@ -101,7 +103,8 @@ class init:
                 changeMode = False
         if changeMode:
             self.stage += 1
-            if self.stage == self.numberOfStates:
+            if self.stage >= self.numberOfStates:
+                self.stage = 0
                 return True
             self.dic["frame"].reset()
             self.dic["turret"].reset()
