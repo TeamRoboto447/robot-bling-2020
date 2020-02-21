@@ -89,8 +89,8 @@ class init:
     def run(self):
         if self.stage == 0:
             bools = [
-            self.dic["frame"].fillOverTimeAsOne((10, 0, 0), numberPerLoop = 2),
-            self.dic["turret"].fillOverTimeAsOne((10, 0, 0), numberPerLoop = 1)
+            self.dic["frame"].fillOverTimeAsOne((20, 0, 0), numberPerLoop = 2),
+            self.dic["turret"].fillOverTimeAsOne((20, 0, 0), numberPerLoop = 1)
             ]
             #print("stage0")
         elif self.stage == 1:
