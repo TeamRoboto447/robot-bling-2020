@@ -54,9 +54,9 @@ class fight:
         self.pixels.show()
     def run(self):
         if self.state:
-            done = self.dic["frame"].fillOverTimeAsOne((0, 0, 255), numberPerLoop = 2)
+            done = self.dic["frame"].fillOverTimeAsOne((0, 0, 255), numberPerLoop = 1)
         else:
-            done = self.dic["frame"].invertedFillOverTimeAsOne((255, 0, 0), numberPerLoop = 2)
+            done = self.dic["frame"].invertedFillOverTimeAsOne((255, 0, 0), numberPerLoop = 1)
         
         if done:
             self.state = not self.state
