@@ -45,11 +45,8 @@ class fight:
         self.pixels = pixels
         self.state = False
     def start(self):
-        color = (0, 255, 0)
-        self.dic["frameLeft"].fill(color)
-        self.dic["frameRight"].fill(color)
-        self.dic["frameFront"].fill(color)
-        self.dic["frameBack"].fill(color)
+        color = (0, 0, 255)
+        self.dic["frame"].fill(color)
         self.dic["turret"].fill(0)
         self.pixels.show()
     def run(self):
