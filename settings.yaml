@@ -5,3 +5,4 @@ NetworkTables:
   HostAddress: 192.168.137.4
   TeamNumber: 447
   Deployed: False
+LoopDelay: 0.001

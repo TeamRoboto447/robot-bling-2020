@@ -41,8 +41,12 @@ statesDict = {
 }
 
 state = statesDict["init"]
-state.run()
+state.start()
+while not state.run():
+    time.sleep(sett["LoopDelay"])
 t = None
+
+
 
 def changeState(key, value, isNew):
     global state, statesDict, t
@@ -62,6 +66,6 @@ try:
         t = threading.Thread(target=state.run)
         t.start()
         t.join()
-        time.sleep(0.001)
+        time.sleep(sett["LoopDelay"])
 finally:
     state.end()

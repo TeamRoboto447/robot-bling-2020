@@ -68,6 +68,7 @@ class fight:
     end = end
     
 class init:
+    numberOfStates = 3
     def __init__(self, dictOfGroups, tables, pixels):
         self.dic = dictOfGroups
         self.tables = tables
@@ -100,10 +101,11 @@ class init:
                 changeMode = False
         if changeMode:
             self.stage += 1
-            self.dic["frameLeft"].reset()
-            self.dic["frameRight"].reset()
-            self.dic["frameFront"].reset()
-            self.dic["frameBack"].reset()
+            if self.stage == self.numberOfStates:
+                return True
+            self.dic["frame"].reset()
+            self.dic["turret"].reset()
+        return False
         #self.dic["frame"].fill((0, 10, 0), show = True)
         #self.dic["turret"].fill((0, 10, 0), show = True)
     def teamChange(self, team):
