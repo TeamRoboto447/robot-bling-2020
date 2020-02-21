@@ -108,5 +108,7 @@ class init:
             self.dic["frameBack"].reset()
         #self.dic["frame"].fill((0, 10, 0), show = True)
         #self.dic["turret"].fill((0, 10, 0), show = True)
+    def teamChange(self, team):
+        pass
 
     end = end

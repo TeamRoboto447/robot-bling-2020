@@ -53,7 +53,6 @@ class LEDSection:
             self.index == 0
             self.cont = False
             return True
-            self.cont = False
         return False
     def grade(self, colorStart, colorEnd, show = False):
         dX = self.max - self.min
@@ -91,7 +90,7 @@ class SectionGroup:
     def invertedFillOverTimeAsOne(self,color,numberPerLoop = 1):
         if self.index >= len(self):
             return True
-        finished = reverse(self.items)[self.index].fillOverTime(color,numberPerLoop)
+        finished = reverse(self.items)[self.index].invertedFillOverTime(color,numberPerLoop)
         if finished:
             reverse(self.items)[self.index].reset()
             self.index += 1
