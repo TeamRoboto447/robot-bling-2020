@@ -53,6 +53,7 @@ class fight:
         self.dic["turret"].fill(0)
         self.pixels.show()
     def run(self):
+        self.dic["turret"].fill((0,0,0))
         if self.state:
             done = self.dic["frame"].fillOverTimeAsOne((0, 0, 255), numberPerLoop = 1)
         else:
@@ -67,6 +68,18 @@ class fight:
         pass
     end = end
     
+class off:
+    def __init__(self,dictOfGroups,tables,pixels):
+        self.dic = dictOfGroups
+        self.tables = tables
+        self.pixels = pixels
+    start = end
+    run = end
+    def teamChange(self,team):
+        pass
+    end = end
+    
+
 class init:
     numberOfStates = 3
     def __init__(self, dictOfGroups, tables, pixels):
