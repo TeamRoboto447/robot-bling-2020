@@ -44,6 +44,7 @@ state = statesDict["init"]
 state.start()
 while not state.run():
     time.sleep(sett["LoopDelay"])
+state.end()
 t = None
 
 
