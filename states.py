@@ -92,19 +92,19 @@ class init:
     def run(self):
         if self.stage == 0:
             bools = [
-            self.dic["frame"].fillOverTimeAsOne((0, 10, 0), numberPerLoop = 1),
+            self.dic["frame"].fillOverTimeAsOne((0, 10, 0), numberPerLoop = 2),
             self.dic["turret"].fillOverTimeAsOne((0, 10, 0), numberPerLoop = 1)
             ]
             #print("stage0")
         elif self.stage == 1:
             bools = [
-            self.dic["frame"].fillOverTimeAsOne((55, 0, 55), numberPerLoop = 1),
+            self.dic["frame"].fillOverTimeAsOne((55, 0, 55), numberPerLoop = 2),
             self.dic["turret"].fillOverTimeAsOne((55, 0, 55), numberPerLoop = 1)
             ]
             #print("stage1")
         elif self.stage == 2:
             bools = [
-            self.dic["frame"].fillOverTimeAsOne((255, 255, 255), numberPerLoop = 1),
+            self.dic["frame"].fillOverTimeAsOne((255, 255, 255), numberPerLoop = 2),
             self.dic["turret"].fillOverTimeAsOne((255, 255, 255), numberPerLoop = 1)
             ]
         else:
