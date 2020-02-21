@@ -27,7 +27,7 @@ groups = {
     "frameRight": frameRight,
     "frameFront": frameFront,
     "frameBack": frameBack,
-    "frame": SectionGroup(frameLeft, frameRight, frameBack, frameFront),
+    "frame": SectionGroup(frameLeft, frameRight, frameFront, frameBack),
     "turretRight": turretRight,
     "turretLeft": turretLeft,
     "turret": SectionGroup(turretLeft,turretRight)
