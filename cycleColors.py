@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 import board, neopixel, time
 from time import sleep
-NUM_LED = 60 * 5
+NUM_LED = 38*2
 NEO_PIN = board.D18
+Delay = 0.01
+Speed = 1
 
 pixels = neopixel.NeoPixel(NEO_PIN, NUM_LED, auto_write = False, brightness = 0.25)
 pixels.show()
@@ -10,12 +12,14 @@ pixels.show()
 def flow(color):
 	for i in range(NUM_LED):
 		pixels[i] = color
-		if i % 5 is 0:
+		sleep(Delay)
+		if i % Speed is 0:
 			pixels.show()
 def reverseFlow(color):
 	for i in range(NUM_LED):
 		pixels[NUM_LED - 1 - i] = color
-		if i % 5 is 0:
+		sleep(Delay)
+		if i % Speed is 0:
 			pixels.show()
 
 while(True):
