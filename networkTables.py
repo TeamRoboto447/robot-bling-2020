@@ -7,6 +7,7 @@ sett = settings.getSettings("NetworkTables")
 
 class tables:
     def __init__(self):
+        sleep(30)
         if not sett['Deployed']:
             NT.initialize(server=sett['HostAddress'])
         else:

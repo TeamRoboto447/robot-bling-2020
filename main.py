@@ -26,8 +26,10 @@ groups = {
 statesDict = {
     "init": states.init(groups, tables, pixels),
     "idle": states.idle(groups, tables, pixels),
+    "fancyidle": states.fancyidle(groups, tables, pixels),
     "grade": states.grade(groups, tables, pixels),
     "fight": states.fight(groups, tables, pixels),
+    "random": states.randomColors(groups, tables, pixels),
     "off": states.off(groups,tables,pixels)
 }
 
