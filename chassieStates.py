@@ -123,7 +123,6 @@ class rainbow:
         waveLengthMin = 380
         waveLength = (waveLengthMax-waveLengthMin)/(self.max) * i + waveLengthMin
         return wavelengthToRGB.wavelength_to_rgb(waveLength)
-        self.pixels.show()
     def start(self):
         self.index = 0
     def run(self):
@@ -132,6 +131,7 @@ class rainbow:
             self.dic["frameLeft"].setOne((i+self.index) % self.max,color)
             self.dic["frameRight"].setOne((i+self.index) % self.max,color)
         self.index += 1
+        self.pixels.show()
     def teamChange(self, team):
         pass
     end = myend
