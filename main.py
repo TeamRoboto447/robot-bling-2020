@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 import board, neopixel, time
-import networkTables, states, settings, threading
+import networkTables, settings, threading
 from group import LEDSection, SectionGroup
 from copy import deepcopy
+
+import chassieStates
 
 sett = settings.getSettings()
 
@@ -22,44 +24,17 @@ groups = {
     "frameRight": frameRight,
     "frame": SectionGroup(frameLeft, frameRight)
 }
+SectionStates = [
+    chassieStates
+]
 
-statesDict = {
-    "init": states.init(groups, tables, pixels),
-    "idle": states.idle(groups, tables, pixels),
-    "fancyidle": states.fancyidle(groups, tables, pixels),
-    "grade": states.grade(groups, tables, pixels),
-    "fight": states.fight(groups, tables, pixels),
-    "random": states.randomColors(groups, tables, pixels),
-    "off": states.off(groups,tables,pixels)
-}
-
-state = statesDict["init"]
-state.start()
-while not state.run():
-    time.sleep(sett["LoopDelay"])
-state.end()
-t = None
-
-
-
-def changeState(key, value, isNew):
-    global state, statesDict, t
-    if t != None and t.is_alive():
-        t.join()
-    if key == sett["NetworkTables"]["BlingSelect"]:
-        state.end()
-        state = statesDict[value]
-        state.start()
-    elif key == sett["NetworkTables"]["TeamColor"]:
-        state.teamChange(value)
-
-tables.EventListener(changeState)
+def teamChanged(entry, key, value, param):
+    for sectionState in SectionStates:
+        sectionState.teamChange(value)
 
 try:
-    while True:
-        t = threading.Thread(target=state.run)
-        t.start()
-        t.join()
-        time.sleep(sett["LoopDelay"])
+    for sectionState in SectionStates:
+        sectionState.run()
 finally:
-    state.end()
+    for sectionState in SectionStates:
+        sectionState.end()

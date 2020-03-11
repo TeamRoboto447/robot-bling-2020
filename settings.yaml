@@ -2,7 +2,9 @@ NetworkTables:
   BlingSelect: /Bling/blingSelect
   TeamColor: /FMSInfo/IsRedAlliance
   stationNumb: /FMSInfo/StationNumber
-  HostAddress: 192.168.1.117
+  chassieSelect: /Bling/chassieSelect
+  HostAddress: 192.168.1.148
   TeamNumber: 447
   Deployed: True
 LoopDelay: 0.001
+  

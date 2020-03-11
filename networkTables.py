@@ -27,3 +27,5 @@ class tables:
         return self.stationNumb.value
     def EventListener(self,listener):
         NT.addEntryListener(listener)
+    def EventListenerByKey(self,listener,key):
+        NT.getEntry(key).addListener(listener,16)
