@@ -19,6 +19,7 @@ class tables:
         self.blingSelect = NT.getEntry(sett["BlingSelect"])
         self.teamColor = NT.getEntry(sett["TeamColor"])
         self.stationNumb = NT.getEntry(sett["stationNumb"])
+        self.chassieSelect = NT.getEntry(sett["chassieSelect"])
     def getBlingSelect(self):
         return self.blingSelect.value
     def getTeamColor(self):
