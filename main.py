@@ -22,7 +22,8 @@ frameRight = LEDSection(pixels,38,76,inverted=True)
 groups = {
     "frameLeft": frameLeft,
     "frameRight": frameRight,
-    "frame": SectionGroup(frameLeft, frameRight)
+    "frame": SectionGroup(frameLeft, frameRight),
+    "frameCircle": SectionGroup(deepcopy(frameLeft),deepcopy(frameRight).setInverted(False))
 }
 SectionStates = [
     chassieStates

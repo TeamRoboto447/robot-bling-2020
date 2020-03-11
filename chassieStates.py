@@ -33,11 +33,13 @@ class randomColors:
         self.dic = dictOfGroups
         self.tables = tables
         self.pixels = pixels
+        self.max = self.dic["frame"].ledLen()
     def start(self):
         self.dic["frame"].fill((255, 255, 255))
         self.pixels.show()
     def run(self):
-        self.pixels[math.floor(random.random()*len(self.pixels)-1)] = (math.floor(random.random()*255), math.floor(random.random()*255), math.floor(random.random()*255))
+        self.dic["frame"].setOne(random.randrange(self.max),(random.randrange(255),random.randrange(255),random.randrange(255),random.randrange(255)))
+        self.pixels.show()
     def teamChange(self, team):
         pass
     end = myend
@@ -121,6 +123,7 @@ class rainbow:
         waveLengthMin = 380
         waveLength = (waveLengthMax-waveLengthMin)/(self.max) * i + waveLengthMin
         return wavelengthToRGB.wavelength_to_rgb(waveLength)
+        self.pixels.show()
     def start(self):
         self.index = 0
     def run(self):
@@ -155,6 +158,7 @@ class waves:
         self.redWave.move(self.redSpeed)
         self.greenWave.move(self.greenSpeed)
         self.blueWave.move(self.blueSpeed)
+        self.pixels.show()
     def teamChange(self, team):
         pass
     end = myend
@@ -176,6 +180,7 @@ class zoom:
             self.dic["frameCircle"].setOne((self.indexRed + i) % self.max,(255,0,0))
             self.dic["frameCircle"].setOne((self.indexBlue + i) % self.max,(0,0,255))
         self.index += self.speed
+        self.pixels.show()
     def teamChange(self, team):
         pass
     end = end
