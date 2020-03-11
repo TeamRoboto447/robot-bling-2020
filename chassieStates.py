@@ -233,7 +233,7 @@ stateDic = {}
 state = None
 t = None
 con = True
-def initALL(self,groups,tables,pixels):
+def initALL(groups,tables,pixels):
     global stateDic, state, sett
     stateDic = {
         "init": init(groups, tables, pixels),

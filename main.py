@@ -30,7 +30,7 @@ SectionStates = [
 ]
 
 for sectionState in SectionStates:
-    sectionState.initALL()
+    sectionState.initALL(groups,tables,pixels)
 
 def teamChanged(entry, key, value, param):
     for sectionState in SectionStates:
