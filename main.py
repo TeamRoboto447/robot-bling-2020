@@ -29,6 +29,9 @@ SectionStates = [
     chassieStates
 ]
 
+for sectionState in SectionStates:
+    sectionState.initALL()
+
 def teamChanged(entry, key, value, param):
     for sectionState in SectionStates:
         sectionState.teamChange(value)
