@@ -128,6 +128,8 @@ class rainbow:
             color = self.rainbow(i)
             self.dic["frameLeft"].setOne((i+self.index) % self.max,color)
             self.dic["frameRight"].setOne((i+self.index) % self.max,color)
+    def teamChange(self, team):
+        pass
     end = myend
 
 
