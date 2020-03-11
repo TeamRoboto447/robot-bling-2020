@@ -1,4 +1,4 @@
-import random, math, threading, settings
+import random, math, threading, settings, Math
 from time import sleep
 import wavelengthToRGB
 
@@ -128,6 +128,33 @@ class rainbow:
             color = self.rainbow(i)
             self.dic["frameLeft"].setOne((i+self.index) % self.max,color)
             self.dic["frameRight"].setOne((i+self.index) % self.max,color)
+        self.index += 1
+    def teamChange(self, team):
+        pass
+    end = myend
+
+class waves:
+    def __init__(self,dictOfGroups,tables,pixels):
+        self.dic = dictOfGroups
+        self.tables = tables
+        self.pixels = pixels
+        self.max = self.dic["frameLeft"].ledLen()
+        self.start()
+    def start(self):
+        self.redWave = Math.wave(random.randrange(self.max),random.randrange(100,127),127)
+        self.greenWave = Math.wave(random.randrange(self.max),random.randrange(100,127),127)
+        self.blueWave = Math.wave(random.randrange(self.max),random.randrange(100,127),127)
+        self.redSpeed = int((random.random() * 2 - 1) * 10)
+        self.greenSpeed = int((random.random() * 2 - 1) * 10)
+        self.blueSpeed = int((random.random() * 2 - 1) * 10)
+    def run(self):
+        for i in range(self.max):
+            color = (int(self.redWave(i)),int(self.greenWave(i)),int(self.blueWave(i)))
+            self.dic["frameLeft"].setOne(i,color)
+            self.dic["frameRight"].setOne(i,color)
+        self.redWave.move(self.redSpeed)
+        self.greenWave.move(self.greenSpeed)
+        self.blueWave.move(self.blueSpeed)
     def teamChange(self, team):
         pass
     end = myend
@@ -189,6 +216,8 @@ def initALL(self,groups,tables,pixels):
         "grade": grade(groups, tables, pixels),
         "fight": fight(groups, tables, pixels),
         "random": randomColors(groups, tables, pixels),
+        "rainbow": rainbow(groups,tables,pixels),
+        "waves": waves(groups,tables,pixels),
         "off": off(groups,tables,pixels)
     }
     state = stateDic["init"]
