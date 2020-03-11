@@ -159,6 +159,27 @@ class waves:
         pass
     end = myend
 
+class zoom:
+    def __init__(self,dictOfGroups,tables,pixels):
+        self.dic = dictOfGroups
+        self.tables = tables
+        self.pixels = pixels
+        self.indexRed = 0
+        self.indexBlue = 10
+        self.size = 5
+        self.speed = 1
+        self.max = self.dic["frameCircle"].ledLen()
+    def start(self):
+        self.index = 0
+    def run(self):
+        for i in range(self.size):
+            self.dic["frameCircle"].setOne((self.indexRed + i) % self.max,(255,0,0))
+            self.dic["frameCircle"].setOne((self.indexBlue + i) % self.max,(0,0,255))
+        self.index += self.speed
+    def teamChange(self, team):
+        pass
+    end = end
+    
 
 class init:
     numberOfStates = 3
@@ -218,6 +239,7 @@ def initALL(self,groups,tables,pixels):
         "random": randomColors(groups, tables, pixels),
         "rainbow": rainbow(groups,tables,pixels),
         "waves": waves(groups,tables,pixels),
+        "zoom": zoom(groups,tables,pixels),
         "off": off(groups,tables,pixels)
     }
     state = stateDic["init"]
