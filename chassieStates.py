@@ -1,5 +1,6 @@
 import random, math, threading, settings
 from time import sleep
+import wavelengthToRGB
 
 def myend(self):
     for a in self.dic:
@@ -107,7 +108,28 @@ class off:
     def teamChange(self,team):
         pass
     end = myend
-    
+
+class rainbow:
+    def __init__(self,dictOfGroups,tables,pixels):
+        self.dic = dictOfGroups
+        self.tables = tables
+        self.pixels = pixels
+        self.index = 0
+        self.max = self.dic["frameLeft"].ledLen()
+    def rainbow(self,i):
+        waveLengthMax = 750
+        waveLengthMin = 380
+        waveLength = (waveLengthMax-waveLengthMin)/(self.max) * i + waveLengthMin
+        return wavelengthToRGB.wavelength_to_rgb(waveLength)
+    def start(self):
+        self.index = 0
+    def run(self):
+        for i in range(self.max):
+            color = self.rainbow(i)
+            self.dic["frameLeft"].setOne((i+self.index) % self.max,color)
+            self.dic["frameRight"].setOne((i+self.index) % self.max,color)
+    end = myend
+
 
 class init:
     numberOfStates = 3

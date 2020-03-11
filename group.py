@@ -26,6 +26,8 @@ class LEDSection:
     def show(self,show):
         if show:
             self.pixels.show()
+    def setOne(self,index,color):
+        self.pixels[self.currentRange[index]] = color
     def fill(self, color, show = False):
         for i in self.currentRange:
             self.pixels[i] = color
@@ -68,6 +70,8 @@ class LEDSection:
     def reset(self):
         self.index = 0
         self.cont = True
+    def ledLen(self):
+        return len(self.currentRange)
     def __len__(self):
         return len(self.currentRange)
 
@@ -110,6 +114,14 @@ class SectionGroup:
             item.grade(colorStart, colorEnd, show)
     def __len__(self):
         return len(self.items)
+    def ledLen(self):
+        return sum(len(item) for item in self.items)
+    def setOne(self,index,color):
+        for item in self.items:
+            if index < item.ledLen():
+                item.setOne(index,color)
+                break
+            index -= item.ledLen()
     def reset(self):
         self.index = 0
         self.finished = False
